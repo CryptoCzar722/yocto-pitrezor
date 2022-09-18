@@ -13,4 +13,3 @@ bitbake pitrezor-image
 cp tmp/deploy/images/raspberrypi0-wifi/pitrezor-image-raspberrypi0-wifi.rpi-sdimg /$IMGFILE
 
 zip -m -j -9 ${IMGFILE%.img}.zip $IMGFILE
-
