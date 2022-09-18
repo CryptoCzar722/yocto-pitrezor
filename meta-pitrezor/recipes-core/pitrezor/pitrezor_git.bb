@@ -3,17 +3,17 @@ SUMMARY = "Pitrezor application"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://legacy/COPYING;md5=e6a600fd5e1d9cbde2d983680233ad02"
 
-DEPENDS = "libsdl2 libsdl2-image bcm2835 protobuf-native python3-protobuf-native python3-six-native python3-click-native python3-trezor-native dos2unix-native python3-mako-native python3-munch-native libconfig"
+DEPENDS = "libsdl2 libsdl2-image bcm2835 protobuf-native python3-protobuf-native python3-six-native python3-click-native python3-trezor-native dos2unix-native python3-mako-native python3-munch-native libconfig python3-typing-extensions-native"
 RDEPENDS_${PN} = "rng-tools dos2unix"
 
-inherit pkgconfig python3native
+inherit pkgconfig python3native siteinfo
 
 SRC_URI = "git://github.com/heneault/trezor-firmware.git;branch=pitrezor \
            file://start_pitrezor \
            file://pitrezor.config \
           "
 
-SRCREV = "4671d69e275ae35a62482c0711dc153a5b4ad442"
+SRCREV = "27057e8ae70e6d4e19e5a213f820b4907583c612"
 
 S = "${WORKDIR}/git"
 
@@ -25,6 +25,7 @@ do_compile() {
   export PIZERO=1
   export CPUFLAGS=""
   export RANDOM_DEV_FILE="/dev/random"
+  export ARCH_BITS=${SITEINFO_BITS}
   cd legacy
   make vendor
   make -C emulator/pizero
