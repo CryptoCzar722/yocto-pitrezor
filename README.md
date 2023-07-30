@@ -12,7 +12,7 @@ This is the most reliable way to build your own copy of the release images via D
 
 The steps are:
 1. [Install Docker](https://docs.docker.com/engine/installation/)
-2. `git clone https://github.com/3rdIteration/yocto-pitrezor.git`
+2. `git clone https://github.com/CryptoCzar722/yocto-pitrezor`
 3. `cd yocto-pitrezor`
 4. `sudo ./build-pitrezor.sh TAG [raspberrypi4-64 | raspberrypi0-2w-64]` (where TAG is 1.11.2.0 for example, if left blank the script builds latest commit in master branch). You can optionnaly specify "raspberrypi4-64" or "raspberrypi0-2w-64" to build an image for one of these platform. Otherwise the default platform is pi zero.
 
@@ -23,7 +23,7 @@ This process requires that you configure your environment to be able to use Bitb
 
 The steps are:
 1. Install requirements on your system. (On Ubuntu 22.04 you will need to install these with something like: `sudo apt install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping locales liblz4-tool zstd`)
-2. Clone the repository: `git clone https://github.com/3rdIteration/yocto-pitrezor.git` (This will clone this forked repo, not the official one by heneault)
+2. Clone the repository: `git clone https://github.com/CryptoCzar722/yocto-pitrezor` (This will clone this forked repo, not the official one by heneault)
 3. Nativate to the repository source folder: `cd yocto-pitrezor`
 4. `./build-pitrezor-nodocker.sh TAG [[raspberrypi4 | raspberrypi4-64 | raspberrypi0-2w | raspberrypi0-2w-64]]` (where TAG is 1.11.2.0 for example, if left blank the script builds latest commit in master branch). You can optionnaly specify "raspberrypi4-64" or "raspberrypi0-2w-64" to build an image for one of these platform. Otherwise the default platform is pi zero.
 
