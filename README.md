@@ -1,3 +1,13 @@
+# CryptoCzar722 Modifications
+Modifications: 
+    Changed Screen parameters in "fbcp-ili9341_git.bb" 
+    Change the following line for you settings to build for a different display. 
+    EXTRA_OECMAKE = "-DWAVESHARE_ST7789VW_HAT=ON -DGPIO_TFT_DATA_CONTROL=22 -DGPIO_TFT_RESET_PIN=27 -DSPI_BUS_CLOCK_DIVISOR=6 -DSTATISTICS=0"
+
+If you desire to build from scratch I recommend to do "sudo chmod -R 777 imgs"
+as I had  build issues failing to copying the image at the very end of the build process, wasting 3-4 hours on each failed attempt. I also had errors that just required me to disable my Mac from sleeping due to it disabling its wifi in sleep mode. 
+
+
 # yocto-pitrezor
 OS linux platform for the pitrezor project (usign yocto)
 
@@ -61,5 +71,6 @@ An example of the configuration file can be seen below.
     export BITCOIN_ONLY=0
 
 By default, `ENABLE_FBCPILI9341_DISPLAY` option will support the [Waveshare 240x240 1.3inch LCD HAT](https://www.waveshare.com/1.3inch-lcd-hat.htm) that is used with the [SeedSigner](https://seedsigner.com/). If you want to use a different hat, you will need to modify the fbcp-ili9341 recipe with the cmake arguments found here: https://github.com/juj/fbcp-ili9341
+
 
 
